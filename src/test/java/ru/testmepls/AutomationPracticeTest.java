@@ -26,7 +26,15 @@ public class AutomationPracticeTest {
         String email = "dcscroot@gmail.com";
         String gender = "Male";
         String phoneNumber = "9505674007";
+        String year = "1985";
+        String month = "August";
+        String birthday = "20";
+        String subject = "Arts";
+        String hobbies = "Reading";
         String address = "Solnechnaya st, 12-1";
+        String state = "Haryana";
+        String city = "Karnal";
+
 
         open("/automation-practice-form");
         executeJavaScript("$('footer').remove()");
@@ -39,31 +47,33 @@ public class AutomationPracticeTest {
         $("#genterWrapper").$(byText(gender)).click();
         $("#userNumber").setValue(phoneNumber);
         $("#dateOfBirthInput").clear();
-        $(".react-datepicker__month-select").selectOption("August");
-        $(".react-datepicker__year-select").selectOption("1985");
-        $(".react-datepicker__day--020").click();
-        $("#subjectsInput").setValue("Arts").pressEnter();
-        $("#hobbiesWrapper").$(byText("Reading")).click();
+        $(".react-datepicker__month-select").selectOption(month);
+        $(".react-datepicker__year-select").selectOption(year);
+        $(".react-datepicker__day--0" + birthday).click();
+        $("#subjectsInput").setValue(subject).pressEnter();
+        $("#hobbiesWrapper").$(byText(hobbies)).click();
         $("#uploadPicture").uploadFromClasspath("16451858.jpg");
         $("#currentAddress").setValue(address);
         $("#state").click();
-        $(byText("Haryana")).click();
+        $(byText(state)).click();
         $("#city").click();
-        $(byText("Karnal")).click();
+        $(byText(city)).click();
         $("#submit").click();
         //check
         $(".modal-header").shouldHave(text("Thanks for submitting the form"));
-        $(".table-responsive").shouldHave(text(name));
-        $(".table-responsive").shouldHave(text(lastName));
-        $(".table-responsive").shouldHave(text(email));
-        $(".table-responsive").shouldHave(text(gender));
-        $(".table-responsive").shouldHave(text(phoneNumber));
-        $(".table-responsive").shouldHave(text("20 August,1985"));
-        $(".table-responsive").shouldHave(text("Arts"));
-        $(".table-responsive").shouldHave(text("Reading"));
-        $(".table-responsive").shouldHave(text("16451858.jpg"));
-        $(".table-responsive").shouldHave(text("Haryana"));
-        $(".table-responsive").shouldHave(text("Karnal"));
+        $(".table-responsive").shouldHave(text(name),
+                text(lastName),
+                text(email),
+                text(gender),
+                text(phoneNumber),
+                text(birthday),
+                text(month),
+                text(year),
+                text(subject),
+                text(hobbies),
+                text("16451858.jpg"),
+                text(state),
+                text(city));
 
     }
 
