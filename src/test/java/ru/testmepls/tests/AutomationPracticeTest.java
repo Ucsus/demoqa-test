@@ -1,4 +1,4 @@
-package ru.testmepls;
+package ru.testmepls.tests;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;

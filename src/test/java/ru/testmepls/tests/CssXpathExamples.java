@@ -1,4 +1,4 @@
-package ru.testmepls;
+package ru.testmepls.tests;
 
 import org.openqa.selenium.By;
 
