@@ -36,7 +36,7 @@ public class AutomationPracticeTestWithPageObjects {
                 .setAddress("Solnechnaya st, 12-1")
                 .setState("Haryana")
                 .setCity("Karnal")
-                .submit();
+                .clickSubmit();
 
         registrationFormPage.checkResultsTableVisible()
                 .checkResult("Student Name", "David Courtney")

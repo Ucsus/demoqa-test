@@ -23,7 +23,7 @@ public class RegistrationFormPage {
             addressInput = $("#currentAddress"),
             stateInput = $("#state"),
             cityInput = $("#city"),
-            submitClick = $("#submit");
+            clickSubmit = $("#submit");
 
     public RegistrationFormPage openPage() {
         open("/automation-practice-form");
@@ -108,8 +108,8 @@ public class RegistrationFormPage {
 
         return this;
     }
-    public RegistrationFormPage submit() {
-        submitClick.click();
+    public RegistrationFormPage clickSubmit() {
+        clickSubmit.click();
 
         return this;
     }
