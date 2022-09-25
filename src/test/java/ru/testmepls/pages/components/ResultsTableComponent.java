@@ -15,15 +15,6 @@ public class ResultsTableComponent {
 
         return this;
     }
-
-    public ResultsTableComponent setDate(String day, String month, String year) {
-        $(".react-datepicker__month-select").selectOption(month);
-        $(".react-datepicker__year-select").selectOption(year);
-        $(".react-datepicker__day--0" + day).click();
-
-        return this;
-    }
-
     public ResultsTableComponent checkResult(String key, String value) {
         $(".table-responsive table").$(byText(key))
                 .parent().shouldHave(text(value));
