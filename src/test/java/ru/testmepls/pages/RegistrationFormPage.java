@@ -8,9 +8,9 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationFormPage {
-    private CalendarComponent calendarComponent = new CalendarComponent();
-    private ResultsTableComponent resultsTableComponent = new ResultsTableComponent();
-    private SelenideElement
+    private final CalendarComponent calendarComponent = new CalendarComponent();
+    private final ResultsTableComponent resultsTableComponent = new ResultsTableComponent();
+    private final SelenideElement
             firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             emailInput = $("#userEmail"),
@@ -36,12 +36,6 @@ public class RegistrationFormPage {
 
     public RegistrationFormPage setFirstName(String value) {
         firstNameInput.setValue(value);
-
-        return this;
-    }
-
-    public RegistrationFormPage clearFirstName(String value) {
-        firstNameInput.clear();
 
         return this;
     }

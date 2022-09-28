@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import ru.testmepls.pages.RegistrationFormPage;
 
-public class AutomationPracticeTestWithPageObjects {
+public class RegistrationFormWithRandomUtilsTests {
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
 
     @BeforeAll

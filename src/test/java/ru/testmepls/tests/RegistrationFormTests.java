@@ -1,21 +1,46 @@
 package ru.testmepls.tests;
 
+import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class AutomationPracticeTestWithDataTests extends TestBase {
+
+public class RegistrationFormTests {
+
+    @BeforeAll
+    static void setUp() {
+        Configuration.baseUrl = "https://demoqa.com";
+        Configuration.browserSize = "1920x1080";
+        Configuration.holdBrowserOpen = true;
+    }
 
     @Test
     void fillPracticeFormTest() {
+        String name = "David";
+        String lastName = "Courtney";
+        String email = "dcscroot@gmail.com";
+        String gender = "Male";
+        String phoneNumber = "9505674007";
+        String year = "1985";
+        String month = "August";
+        String birthday = "20";
+        String subject = "Arts";
+        String hobbies = "Reading";
+        String address = "Solnechnaya st, 12-1";
+        String state = "Haryana";
+        String city = "Karnal";
+
+
         open("/automation-practice-form");
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('#RightSide_Advertisement').remove()");
 
-        $("#firstName").setValue(firstName);
+        $("#firstName").setValue(name);
         $("#lastName").setValue(lastName);
         $("#userEmail").setValue(email);
         $("#genterWrapper").$(byText(gender)).click();
@@ -35,12 +60,14 @@ public class AutomationPracticeTestWithDataTests extends TestBase {
         $("#submit").click();
         //check
         $(".modal-header").shouldHave(text("Thanks for submitting the form"));
-        $(".table-responsive").shouldHave(text(firstName),
+        $(".table-responsive").shouldHave(text(name),
                 text(lastName),
                 text(email),
                 text(gender),
                 text(phoneNumber),
-                text(birthday + " " + month + "," + year),
+                text(birthday),
+                text(month),
+                text(year),
                 text(subject),
                 text(hobbies),
                 text("16451858.jpg"),
